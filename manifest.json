@@ -1,4 +1,6 @@
 {
+	"debug": true,
+	"log": true,
 	"manifest_version": 2,
 	"applications": {
 		"gecko": {

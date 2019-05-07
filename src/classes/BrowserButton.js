@@ -131,6 +131,7 @@ class BrowserButton {
 	 */
 	_getIconCount(tab) {
 		const tabId = tab.id;
+		const tabUrl = tab.url;
 		let	trackerCount = '';
 		let alert = false;
 
@@ -145,7 +146,7 @@ class BrowserButton {
 		}
 
 		getCliqzAntitrackingData(tabId).then((antitrackingData) => {
-			const { appsCount, appsAlertCount } = this._getTrackerCount(tabId);
+			const { appsCount, appsAlertCount } = this._getTrackerCount(tabId, tabUrl);
 			const adBlockingCount = getCliqzAdblockingData(tabId).totalCount;
 
 			alert = (appsAlertCount > 0);
